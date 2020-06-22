@@ -166,6 +166,7 @@ tether tether_new(tether_options opts) {
 
     // Create the web view.
     WebKitWebView *webview = self->webview = WEBKIT_WEB_VIEW(webkit_web_view_new());
+    webkit_web_view_set_zoom_level(webview, opts.zoom);
     WebKitSettings *settings = webkit_web_view_get_settings(webview);
     WebKitUserContentManager *manager = webkit_web_view_get_user_content_manager(webview);
     if (opts.debug) webkit_settings_set_enable_developer_extras(settings, TRUE);

@@ -60,6 +60,8 @@ impl Window {
             borderless: opts.borderless,
             debug: opts.debug,
 
+            zoom: opts.zoom,
+
             data: Box::<Data>::into_raw(Box::new((this.clone(), handler))) as _,
             closed: Some(closed),
             message: Some(message),
@@ -173,6 +175,9 @@ pub struct Options {
     /// I'm not entirely sure what enabling this does.
     pub debug: bool,
 
+    /// The zoom level in percent (only works on linux for now).
+    pub zoom: f32,
+
     /// The window's handler.
     pub handler: Option<Box<dyn Handler>>,
 }
@@ -187,6 +192,8 @@ impl Default for Options {
 
             borderless: false,
             debug: false,
+
+            zoom: 1.0,
 
             handler: None,
         }

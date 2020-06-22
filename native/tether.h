@@ -1,5 +1,6 @@
 #include <stdbool.h>
 #include <stddef.h>
+#include <float.h>
 
 //TODO: Make sure the HTML5 Fullscreen API works.
 //TODO: File picker.
@@ -22,6 +23,7 @@ typedef struct tether_options {
            minimum_height;
     bool borderless,
          debug;
+    float zoom;
     // The data to pass to event handlers.
     void *data;
     // The window received a message via `window.tether(string)`.
